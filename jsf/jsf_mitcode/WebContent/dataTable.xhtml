@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<h:head>
+</h:head>
+
+<h:body>
+		
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Nombres"></h:outputLabel>
+			<h:inputText value="#{dataTableBean.persona.nombre}"></h:inputText>
+			
+			<h:outputLabel value="Apellidos"></h:outputLabel>
+			<h:inputText value="#{dataTableBean.persona.apellido}"></h:inputText>
+			
+			<h:outputLabel value="Sexo"></h:outputLabel>
+			<h:selectOneMenu value="#{dataTableBean.persona.sexo}">
+				<f:selectItem itemValue="M" itemLabel="MASCULINO"></f:selectItem>
+				<f:selectItem itemValue="F" itemLabel="FEMENINO"></f:selectItem>			
+			</h:selectOneMenu>
+			
+		</h:panelGrid>	
+		<h:commandButton value="Agregar" actionListener="#{dataTableBean.agregarPersona()}"></h:commandButton>
+		
+		
+		<h:dataTable value="#{dataTableBean.personas}" var="persona" rendered="#{not empty dataTableBean.personas}">
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="Nombre"></h:outputLabel>
+				</f:facet>
+				<h:outputLabel value="#{persona.nombre}"></h:outputLabel>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="Apellido"></h:outputLabel>
+				</f:facet>
+				<h:outputLabel value="#{persona.apellido}"></h:outputLabel>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="Sexo"></h:outputLabel>
+				</f:facet>
+				<h:outputLabel value="#{persona.sexo}"></h:outputLabel>
+			</h:column>
+			
+			<h:column>
+				<h:commandLink value="Eliminar" actionListener="#{dataTableBean.eliminarPersona(persona)}"></h:commandLink>
+			</h:column>
+		</h:dataTable>	
+	</h:form>
+
+
+</h:body>
+</html>
