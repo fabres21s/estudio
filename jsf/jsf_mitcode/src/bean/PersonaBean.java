@@ -1,6 +1,8 @@
 package bean;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -17,12 +19,27 @@ public class PersonaBean implements Serializable{
 	private static final long serialVersionUID = 5147281444092208916L;
 	
 	private String nombre;
+	private String apellido = "a";
 	private String mensaje;
+	private boolean validate = false;
+	private boolean check = false;
+	private String texto = "Sin checkear";
+	
+	private String fecha = "Sin asignar";
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
 	
 	
 	public void saludar () {
-		System.out.println("hola!!!");
-		this.mensaje = "Bienvenido "+this.nombre;
+		this.mensaje = "Bienvenido "+this.nombre + " "+this.apellido;
+		
+		validate = this.nombre.contains("a");
+		fecha = sdf.format(new Date());
+	}
+	
+	public void verfecha() {
+		this.mensaje ="hoy es "+ sdf.format(new Date());
 	}
 	
 	public String getNombre() {
@@ -36,5 +53,52 @@ public class PersonaBean implements Serializable{
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public boolean getValidate() {
+		return validate;
+	}
+
+	public void setValidate(boolean validate) {
+		this.validate = validate;
+	}
+
+	
+	
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public boolean getCheck() {
+		return check;
+	}
+
+	public void setCheck(boolean check) {
+		if (check) {
+			texto = "checkeado";
+		} else {
+			texto = "no checkeado";
+		}
+		this.check = check;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 }
