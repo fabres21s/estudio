@@ -8,8 +8,8 @@
 	</h:head>
 	<h:body>
 		<h:form enctype="multipart/form-data" style="width:500px">
-				<p:fileUpload value="#{fileUploadManagedBean.file}" mode="advanced" 
-								fileUploadListener="#{fileUploadManagedBean.fileUploadListener}" multiple="true" dragDropSupport="true"></p:fileUpload>
+				<p:fileUpload value="#{fileUploadManagedBean.file}" mode="advanced" auto="false" 
+								fileUploadListener="#{fileUploadManagedBean.fileUploadListener}" multiple="false" dragDropSupport="true" immediate="true"></p:fileUpload>
 		</h:form>
 	</h:body>
 </html>

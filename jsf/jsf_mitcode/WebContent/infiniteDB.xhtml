@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Journaldev Tutorial</title>
+	</h:head>
+	<h:body>
+		<h:form enctype="multipart/form-data" style="width:500px" id="tableForm">
+		
+		<h3>Scroll infinito con BASE DE DATOS</h3>
+		<p:dataTable id="dataTable" var="p" 
+        value="#{bean.lazyDataModel}"
+        scrollRows="20"
+        liveScroll="true"
+        scrollHeight="500"
+        lazy="true"
+        scrollable="true">
+        <p:ajax update="dataTable" event="filter" />
+
+        <p:column headerText="name" filterBy="#{p.nombre}" sortBy="#{p.nombre}">
+           <h:outputText value="#{p.nombre}" />
+        </p:column>
+        
+         <p:column headerText="correo origen" filterBy="#{p.correoorigen}" sortBy="#{p.correoorigen}">
+           <h:outputText value="#{p.correoorigen}" />
+        </p:column>
+
+</p:dataTable>
+		</h:form>
+	</h:body>
+</ui:composition>
+
+
+
+     
