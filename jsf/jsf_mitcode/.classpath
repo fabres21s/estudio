@@ -15,5 +15,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/essecorp/workspace/workspace_notificalo/jsf_mitocode/WebContent/WEB-INF/lib/commons-fileupload-1.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/essecorp/workspace/workspace_notificalo/jsf_mitocode/WebContent/WEB-INF/lib/json-20140107.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Notifyit-ejb"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

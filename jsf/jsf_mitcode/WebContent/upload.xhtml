@@ -3,13 +3,18 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-	<h:head>
-		<title>Journaldev Tutorial</title>
-	</h:head>
-	<h:body>
-		<h:form enctype="multipart/form-data" style="width:500px">
-				<p:fileUpload value="#{fileUploadManagedBean.file}" mode="advanced" auto="false" 
-								fileUploadListener="#{fileUploadManagedBean.fileUploadListener}" multiple="false" dragDropSupport="true" immediate="true"></p:fileUpload>
-		</h:form>
-	</h:body>
+<h:head>
+	<title>Journaldev Tutorial</title>
+</h:head>
+<h:body>
+	<h:form enctype="multipart/form-data" style="width:750px">
+		<p:fileUpload value="#{fileUploadManagedBean.file}" mode="advanced"
+			auto="false"
+			fileUploadListener="#{fileUploadManagedBean.fileUploadListener}"
+			multiple="true" dragDropSupport="true" immediate="true">
+			
+		</p:fileUpload>
+
+	</h:form>
+</h:body>
 </html>
