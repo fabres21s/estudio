@@ -53,6 +53,7 @@ public class LoginBean implements Serializable {
 		if (valid) {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", user);
+			session.setAttribute("fabio", "sierra");
 			return "admin";
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
@@ -60,14 +61,20 @@ public class LoginBean implements Serializable {
 					new FacesMessage(FacesMessage.SEVERITY_WARN,
 							"Incorrect Username and Passowrd",
 							"Please enter correct username and Password"));
-			return "login";
+			return "pages-login";
 		}
 	}
 
+	
+	public String getValueSession() {
+		HttpSession session = SessionUtils.getSession();
+		return session.getAttribute("fabio").toString();
+	}
+	
 	//logout event, invalidate session
 	public String logout() {
 		HttpSession session = SessionUtils.getSession();
 		session.invalidate();
-		return "login";
+		return "pages-login";
 	}
 }

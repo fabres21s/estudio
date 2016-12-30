@@ -9,6 +9,9 @@ import java.sql.SQLException;
 public class LoginDAO {
 
 	public static boolean validate(String user, String password) {
-		return true;
+		
+		if (user.equals("admin"))
+			return true;
+		return false;
 	}
 }

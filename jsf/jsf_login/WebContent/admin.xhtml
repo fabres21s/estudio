@@ -9,7 +9,9 @@
 <h:body>
 	<h:form>
 		<p>Welcome #{loginBean.user}</p>
+		<h:outputText value="#{loginBean.getValueSession()}"></h:outputText>
 		<h:commandLink action="#{loginBean.logout}" value="Logout"></h:commandLink>
+		
 	</h:form>
 </h:body>
 </html>
