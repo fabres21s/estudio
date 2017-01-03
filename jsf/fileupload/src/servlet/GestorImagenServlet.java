@@ -31,15 +31,15 @@ public class GestorImagenServlet extends HttpServlet {
 
 	public void process(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			byte[] imagen = null;
 
 				FileItem item = ImagenUtil.getInstance().getMapImagenes().get(Long.valueOf(request.getParameter("id")));
 				if (item != null) {
 					response.setHeader("Content-Type", "image/jpg");
 					response.setHeader("Content-Length", String.valueOf(item.get().length));
 					response.setHeader("Content-Disposition", "inline; filename="+item.getName());
+					
 					OutputStream os = response.getOutputStream();
-					os.write(imagen);
+					os.write(item.get());
 					os.close();
 				}
 
