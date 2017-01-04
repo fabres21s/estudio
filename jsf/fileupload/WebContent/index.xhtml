@@ -9,15 +9,31 @@
 
 
 <h:head>
+<script type="text/javascript">
+ function doFunction(value){
+		var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+            //alert(data);
+        }
+    }
+    
+    xhr.open('POST', 'UploadServlet?x='+value, true);
+    xhr.send(null);
+	}
+</script>
+
 </h:head>
 
 <h:body>
 
 
-  	<h:form>
+		<h:form id="fileupload"  method="POST" enctype="multipart/form-data">
 		
-		<ui:include src="/jquery-ui.xhtml" />
+		<input id="clickMe" type="button" value="clickme" onclick="doFunction(2);" />
 		
-	</h:form>
+		<ui:include src="/upload.html" />
+		</h:form>
 </h:body>
 </html>

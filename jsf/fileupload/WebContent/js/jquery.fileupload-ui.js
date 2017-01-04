@@ -592,6 +592,8 @@
             });
             this._on(fileUploadButtonBar.find('.delete'), {
                 click: function (e) {
+                	
+                	console.log("borrando archivos subidos");
                     e.preventDefault();
                     filesList.find('.toggle:checked')
                         .closest('.template-download')
