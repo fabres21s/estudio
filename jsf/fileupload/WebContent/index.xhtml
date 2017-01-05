@@ -29,11 +29,26 @@
 <h:body>
 
 
-		<h:form id="fileupload"  method="POST" enctype="multipart/form-data">
-		
-		<input id="clickMe" type="button" value="clickme" onclick="doFunction(2);" />
-		
-		<ui:include src="/upload.html" />
+		<h:form id="fileupload"   method="POST" enctype="multipart/form-data">
+			
+			
+			<h:panelGroup>
+					<ui:include src="/upload.html"/>
+					</h:panelGroup>
+				
+				<!--  	
+			<h:panelGroup>
+				<ui:include src="/upload2.html"/>
+				</h:panelGroup>
+				
+				-->
+			
+			
+			
 		</h:form>
+		
+		
+		
+		
 </h:body>
 </html>

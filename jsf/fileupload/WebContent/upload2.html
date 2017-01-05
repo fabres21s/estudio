@@ -52,7 +52,7 @@
     <!-- Redirect browsers with JavaScript disabled to the origin page -->
     <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"/> </noscript>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-    <div class="fileupload-buttonbar" id="xyz">
+    <div class="fileupload-buttonbar" id="fabio">
         <div class="fileupload-buttons">
             <!-- The fileinput-button span is used to style the file input field as button -->
             <span class="fileinput-button">
@@ -170,7 +170,7 @@
 <!-- The File Upload jQuery UI plugin -->
 <script src="js/jquery.fileupload-jquery-ui.js"></script>
 <!-- The main application script -->
-<script src="js/main.js"></script>
+<script src="js/main2.js"></script>
 <script>
 // Initialize the jQuery UI theme switcher:
 $('#theme-switcher').change(function () {
@@ -186,36 +186,6 @@ $('#theme-switcher').change(function () {
 </script>
 
 <script type='text/javascript'>
-
-
-$("#xyz")
-.bind('xyzadd', function (e, data) {
-    $.each(data.files, function (index, file) {
-        console.log('xyz Added file: ' + file.name);
-    });
-    data.url = 'UploadServlet?x=142857';
-    
-})
-.bind('xyzsubmit', function (e, data) {/* ... */})
-.bind('xyzsend', function (e, data) {/* ... */})
-.bind('xyzdone', function (e, data) {/* ... */})
-.bind('xyzfail', function (e, data) {/* ... */})
-.bind('xyzalways', function (e, data) {/* ... */})
-.bind('xyzprogress', function (e, data) {/* ... */})
-.bind('xyzprogressall', function (e, data) {/* ... */})
-.bind('xyzstart', function (e) {
-    console.log('Uploads started');
-})
-.bind('xyzstop', function (e) {/* ... */})
-.bind('xyzchange', function (e, data) {/* ... */})
-.bind('xyzpaste', function (e, data) {/* ... */})
-.bind('xyzdrop', function (e, data) {/* ... */})
-.bind('xyzdragover', function (e) {/* ... */})
-.bind('xyzchunksend', function (e, data) {/* ... */})
-.bind('xyzchunkdone', function (e, data) {/* ... */})
-.bind('xyzchunkfail', function (e, data) {/* ... */})
-.bind('xyzchunkalways', function (e, data) {/* ... */});
-
 </script>
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
 <!--[if (gte IE 8)&(lt IE 10)]>

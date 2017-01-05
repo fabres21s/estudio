@@ -38,7 +38,10 @@ public class UploadServlet extends HttpServlet {
 	@Override
 	protected synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("recibiendo con json "+request.getParameter("x"));
+		
+		
+		
+		System.out.println("recibiendo con json files[]"+request.getParameter("files[]"));
 		if (!ServletFileUpload.isMultipartContent(request)) {
 			throw new IllegalArgumentException("Request is not multipart, please 'multipart/form-data' enctype for your form.");
 		}
