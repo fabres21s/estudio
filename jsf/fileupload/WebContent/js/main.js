@@ -13,7 +13,8 @@
 
 $(function () {
     'use strict';
-    console.log($('#fileupload').attr('id'));
+    console.log("el id del upload >>" +$('#upload').attr('id'));
+    console.log("el id del fileupload >>" +$('#fileupload').attr('id'));
     // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:

@@ -51,7 +51,7 @@
 
     // The UI version extends the file upload widget
     // and adds complete user interface interaction:
-    $.widget('blueimp.fileupload', $.blueimp.fileupload, {
+    $.widget('blueimp.upload2', $.blueimp.fileupload, {
 
         options: {
             // By default, files added to the widget are uploaded as soon
@@ -100,10 +100,10 @@
                     return false;
                 }
                 
-                console.log("leyendo el upload 1 "+$(this));
+                console.log("leyendo el upload 2 "+$(this));
                 var $this = $(this),
                     that = $this.data('blueimp-fileupload') ||
-                        $this.data('fileupload'),
+                        $this.data('#upload2'),
                     options = that.options;
                 data.context = that._renderUpload(data.files)
                     .data('data', data)
